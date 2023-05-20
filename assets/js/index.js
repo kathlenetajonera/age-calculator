@@ -14,11 +14,39 @@ const init = () => {
 
 const handleCalculate = () => {
     const isComplete = checkIfFieldsAreComplete();
-    const isValid = validateFields();
 
-    if (isComplete && isValid) {
-        console.log('calculate');
+    if (isComplete) {
+        const isValid = validateFields();
+
+        if (!isValid) return;
+
+        const day = dayField.value.padStart(2, '0');
+        const month = monthField.value.padStart(2, '0');
+        const year = yearField.value;
+
+        let today = moment();
+        let inputtedDate = moment(`${year}-${month}-${day}`);
+
+        let ageInYears = today.diff(inputtedDate, 'year');
+        inputtedDate.add(ageInYears, 'years');
+
+        let ageInMonths = today.diff(inputtedDate, 'months');
+        inputtedDate.add(ageInMonths, 'months');
+
+        let ageInDays = today.diff(inputtedDate, 'days');
+
+        renderAge(ageInYears, ageInMonths, ageInDays);
     }
+};
+
+const renderAge = (years, months, days) => {
+    const yearsText = document.querySelector('#age-years');
+    const monthsText = document.querySelector('#age-months');
+    const daysText = document.querySelector('#age-days');
+
+    yearsText.textContent = years;
+    monthsText.textContent = months;
+    daysText.textContent = days;
 };
 
 const handleInput = (e) => {
