@@ -4,6 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+        <title>Frontend Mentor | Age calculator app</title>
+
         <link
             rel="icon"
             type="image/png"
@@ -11,8 +13,6 @@
             href="./assets/images/favicon-32x32.png"
         />
         <link rel="stylesheet" href="./assets/css/build.css" />
-
-        <title>Frontend Mentor | Age calculator app</title>
     </head>
     <body>
         <div class="container flex-center">
@@ -23,7 +23,12 @@
                             <p>DAY</p>
                         </div>
                         <div class="calculator__input">
-                            <input type="text" placeholder="DD" />
+                            <input
+                                id="day"
+                                type="text"
+                                placeholder="DD"
+                                maxlength="2"
+                            />
                         </div>
 
                         <p class="calculator__error">This field is required</p>
@@ -33,7 +38,12 @@
                             <p>MONTH</p>
                         </div>
                         <div class="calculator__input">
-                            <input type="text" placeholder="MM" />
+                            <input
+                                id="month"
+                                type="text"
+                                placeholder="MM"
+                                maxlength="2"
+                            />
                         </div>
 
                         <p class="calculator__error">This field is required</p>
@@ -43,7 +53,12 @@
                             <p>YEAR</p>
                         </div>
                         <div class="calculator__input">
-                            <input type="text" placeholder="YYYY" />
+                            <input
+                                id="year"
+                                type="text"
+                                placeholder="YYYY"
+                                maxlength="4"
+                            />
                         </div>
 
                         <p class="calculator__error">This field is required</p>
@@ -51,12 +66,12 @@
                 </div>
 
                 <div class="calculator__separator">
-                    <div class="calculator__button flex-center">
+                    <button class="calculator__button flex-center">
                         <img
                             src="./assets/images/icon-arrow.svg"
                             alt="calculate"
                         />
-                    </div>
+                    </button>
                 </div>
 
                 <div class="calculator__overview">
@@ -65,7 +80,7 @@
                         <h1 class="calculator__result-label">years</h1>
                     </div>
                     <div class="calculator__result-wrapper flex">
-                        <span class="calculator__result-number">28</span>
+                        <span class="calculator__result-number">- -</span>
                         <h1 class="calculator__result-label">months</h1>
                     </div>
                     <div class="calculator__result-wrapper flex">
@@ -84,5 +99,8 @@
                 >Frontend Mentor</a
             >. Coded by <a href="#">Kathlene Tajonera</a>.
         </div> -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+        <script defer src="./assets/js/index.js"></script>
     </body>
 </html>
