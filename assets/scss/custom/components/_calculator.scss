@@ -1,0 +1,161 @@
+.calculator {
+    $this: &;
+    background-color: $white;
+    width: 100%;
+    max-width: em(840);
+    padding: em(60);
+    border-radius: em(22);
+    border-bottom-right-radius: em(180);
+
+    @include breakpoint(desktopXs) {
+        font-size: 14px;
+    }
+
+    @include breakpoint(tablet) {
+        max-width: 100%;
+        margin: 0 em(40);
+    }
+
+    @include breakpoint(mobile) {
+        padding: em(50) em(30);
+        margin: 0 em(20);
+    }
+
+    &__input-wrapper {
+        margin-right: em(30);
+
+        @include breakpoint(mobile) {
+            &:not(:last-child) {
+                margin-right: em(20);
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        &.invalid {
+            p {
+                display: block;
+                color: $red;
+            }
+
+            input {
+                border-color: $red;
+            }
+        }
+    }
+
+    &__input-label {
+        margin-bottom: em(8);
+
+        p {
+            font-size: em(14);
+            font-weight: 700;
+            color: $smokeyGrey;
+            letter-spacing: 1.5px;
+        }
+    }
+
+    &__input {
+        input {
+            font-size: em(32);
+            font-weight: 700;
+            width: em(160, 32);
+            height: em(70, 32);
+            padding: em(25, 32);
+            border: 1px solid $lightGrey;
+            border-radius: em(8, 32);
+            transition: border-color 0.3s ease;
+            cursor: pointer;
+
+            @include breakpoint(mobile) {
+                width: 100%;
+                font-size: em(20);
+                padding: em(20) em(14);
+            }
+
+            &::placeholder {
+                font-weight: 700;
+            }
+
+            &:hover,
+            &:focus {
+                border-color: $purple;
+            }
+        }
+    }
+
+    &__error {
+        position: absolute;
+        font-size: em(12);
+        font-style: italic;
+        margin-top: em(12);
+        display: none;
+
+        @include breakpoint(mobile) {
+            font-size: em(10);
+        }
+    }
+
+    &__separator {
+        position: relative;
+
+        @include breakpoint(mobile) {
+            margin: em(30) 0;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: $lightGrey;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+    }
+
+    &__button {
+        position: relative;
+        width: em(100);
+        height: em(100);
+        background-color: $purple;
+        border-radius: 50%;
+        margin-left: auto;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+
+        @include breakpoint(mobile) {
+            margin: 0 auto;
+        }
+
+        &:hover {
+            background-color: $offBlack;
+        }
+    }
+
+    &__result-label {
+        font-size: em(100);
+        font-weight: 800;
+        font-style: italic;
+        margin: 0;
+
+        @include breakpoint(mobile) {
+            font-size: em(60);
+        }
+
+        @include breakpoint(mobileXs) {
+            font-size: em(55);
+        }
+    }
+
+    &__result-number {
+        @extend .calculator__result-label;
+
+        color: $purple;
+        margin-right: em(20, 100);
+    }
+}

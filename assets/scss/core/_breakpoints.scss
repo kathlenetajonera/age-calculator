@@ -1,0 +1,20 @@
+$breakpoints: (
+    mobileXs: 480px,
+    mobile: 767px,
+    tabletXs: 768px,
+    tablet: 1023px,
+    desktopXs: 1024px,
+    desktop: 1200px,
+    desktopXl: 1600px,
+    desktopXXl: 1920px,
+);
+
+@mixin breakpoint($name) {
+    @if not map-has-key($breakpoints, $name) {
+        @warn "Invalid breakpoint `#{$name}`.";
+    } @else {
+        @media (max-width: map-get($breakpoints, $name)) {
+            @content;
+        }
+    }
+}

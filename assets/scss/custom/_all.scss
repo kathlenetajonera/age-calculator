@@ -1,0 +1,23 @@
+@import 'variables';
+@import 'components/calculator';
+
+.container {
+    font-family: $mainFont;
+    background: $offWhite;
+    height: 100vh;
+    min-height: 720px;
+
+    @include breakpoint(mobile) {
+        align-items: flex-start;
+        padding-top: em(85);
+    }
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+
+    a {
+        color: hsl(228, 45%, 44%);
+    }
+}

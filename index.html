@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/images/favicon-32x32.png"
+        />
+        <link rel="stylesheet" href="./assets/css/build.css" />
+
+        <title>Frontend Mentor | Age calculator app</title>
+    </head>
+    <body>
+        <div class="container flex-center">
+            <div class="calculator">
+                <div class="flex">
+                    <div class="calculator__input-wrapper">
+                        <div class="calculator__input-label">
+                            <p>DAY</p>
+                        </div>
+                        <div class="calculator__input">
+                            <input type="text" placeholder="DD" />
+                        </div>
+
+                        <p class="calculator__error">This field is required</p>
+                    </div>
+                    <div class="calculator__input-wrapper">
+                        <div class="calculator__input-label">
+                            <p>MONTH</p>
+                        </div>
+                        <div class="calculator__input">
+                            <input type="text" placeholder="MM" />
+                        </div>
+
+                        <p class="calculator__error">This field is required</p>
+                    </div>
+                    <div class="calculator__input-wrapper">
+                        <div class="calculator__input-label">
+                            <p>YEAR</p>
+                        </div>
+                        <div class="calculator__input">
+                            <input type="text" placeholder="YYYY" />
+                        </div>
+
+                        <p class="calculator__error">This field is required</p>
+                    </div>
+                </div>
+
+                <div class="calculator__separator">
+                    <div class="calculator__button flex-center">
+                        <img
+                            src="./assets/images/icon-arrow.svg"
+                            alt="calculate"
+                        />
+                    </div>
+                </div>
+
+                <div class="calculator__overview">
+                    <div class="calculator__result-wrapper flex">
+                        <span class="calculator__result-number">- -</span>
+                        <h1 class="calculator__result-label">years</h1>
+                    </div>
+                    <div class="calculator__result-wrapper flex">
+                        <span class="calculator__result-number">28</span>
+                        <h1 class="calculator__result-label">months</h1>
+                    </div>
+                    <div class="calculator__result-wrapper flex">
+                        <span class="calculator__result-number">- -</span>
+                        <h1 class="calculator__result-label">days</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="attribution">
+            Challenge by
+            <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                >Frontend Mentor</a
+            >. Coded by <a href="#">Kathlene Tajonera</a>.
+        </div> -->
+    </body>
+</html>
