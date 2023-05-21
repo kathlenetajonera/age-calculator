@@ -4,6 +4,13 @@ const monthField = document.querySelector('#month');
 const yearField = document.querySelector('#year');
 const fields = [dayField, monthField, yearField];
 
+const yearsText = document.querySelector('#age-years');
+const monthsText = document.querySelector('#age-months');
+const daysText = document.querySelector('#age-days');
+const values = [yearsText, monthsText, daysText];
+
+let isCalculated = false;
+
 const init = () => {
     calculateButton.addEventListener('click', handleCalculate);
 
@@ -36,14 +43,11 @@ const handleCalculate = () => {
         let ageInDays = today.diff(inputtedDate, 'days');
 
         renderAge(ageInYears, ageInMonths, ageInDays);
+        isCalculated = true;
     }
 };
 
 const renderAge = (years, months, days) => {
-    const yearsText = document.querySelector('#age-years');
-    const monthsText = document.querySelector('#age-months');
-    const daysText = document.querySelector('#age-days');
-
     yearsText.textContent = years;
     monthsText.textContent = months;
     daysText.textContent = days;
@@ -53,6 +57,17 @@ const handleInput = (e) => {
     e.target.value = e.target.value.replace(/[^0-9]/g, '');
 
     showError(e.target.id, false);
+
+    if (isCalculated) {
+        isCalculated = false;
+        handleReset();
+    }
+};
+
+const handleReset = () => {
+    values.forEach((val) => {
+        val.textContent = '- -';
+    });
 };
 
 const checkIfFieldsAreComplete = () => {
