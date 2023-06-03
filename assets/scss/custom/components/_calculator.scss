@@ -159,3 +159,15 @@
         margin-right: em(20, 100);
     }
 }
+
+.attribution {
+    font-family: $mainFont;
+    font-size: em(12);
+    text-align: center;
+    padding: 20px 10px;
+    color: $offBlack;
+
+    a {
+        color: $offBlack;
+    }
+}

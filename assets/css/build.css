@@ -386,6 +386,17 @@ button {
   margin-right: 0.2em;
 }
 
+.attribution {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.75em;
+  text-align: center;
+  padding: 20px 10px;
+  color: hsl(0deg, 0%, 8%);
+}
+.attribution a {
+  color: hsl(0deg, 0%, 8%);
+}
+
 .container {
   font-family: "Poppins", sans-serif;
   background: hsl(0deg, 0%, 94%);
